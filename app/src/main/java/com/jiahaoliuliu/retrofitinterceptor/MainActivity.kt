@@ -6,12 +6,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.jiahaoliuliu.retrofitinterceptor.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
 
-//    lateinit var activityMainBinding: ActivityMainBinding
+    lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        presenter = MainPresenter(this)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(
             this, R.layout.activity_main)
         binding.makeAWishButton.setOnClickListener{makeAWish()}
@@ -19,5 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeAWish() {
         Toast.makeText(this, "Making your wish come to true", Toast.LENGTH_LONG).show()
+        presenter.makeAWish()
     }
 }

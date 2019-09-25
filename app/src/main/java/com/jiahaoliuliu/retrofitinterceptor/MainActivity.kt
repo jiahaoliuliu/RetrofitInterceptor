@@ -7,8 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.jiahaoliuliu.retrofitinterceptor.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), MainContract.View {
-
-    lateinit var presenter: MainContract.Presenter
+    private lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +18,16 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     private fun makeAWish() {
-        Toast.makeText(this, "Making your wish come to true", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Making your wish come to true", Toast.LENGTH_SHORT).show()
         presenter.makeAWish()
+    }
+
+    override fun showWish(postsList: List<Post>) {
+        Toast.makeText(this, "Your wish is now completed. Wait for 48 hours to see it", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onDestroy() {
+        presenter.onViewDestroyed()
+        super.onDestroy()
     }
 }

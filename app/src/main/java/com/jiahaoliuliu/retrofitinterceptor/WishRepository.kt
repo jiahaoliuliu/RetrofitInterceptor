@@ -6,12 +6,12 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class JsonPlaceholderRepository {
+class WishRepository {
     companion object {
-        private const val BASE_URL = "http://jsonplaceholder.typicode.com"
+        private const val BASE_URL = "https://my-json-server.typicode.com/jiahaoliuliu/RetrofitInterceptor/"
     }
 
-    var jsonPlaceholderApi: JsonPlaceholderApi
+    var wishApi: WishApi
 
     init {
         val okHttpClient = OkHttpClient.Builder().build()
@@ -21,10 +21,10 @@ class JsonPlaceholderRepository {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        jsonPlaceholderApi = retroFit.create(JsonPlaceholderApi::class.java)
+        wishApi = retroFit.create(WishApi::class.java)
     }
 
-    fun getPosts(): Single<List<Post>> {
-        return jsonPlaceholderApi.getPosts()
+    fun getWishesList(): Single<List<Wish>> {
+        return wishApi.getWishesList()
     }
 }

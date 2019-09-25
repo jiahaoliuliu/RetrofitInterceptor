@@ -3,7 +3,7 @@ package com.jiahaoliuliu.retrofitinterceptor
 interface MainContract {
 
     interface View {
-        fun showWish(postsList: List<Post>)
+        fun showWish(wishesList: List<Wish>)
     }
 
     interface Presenter {

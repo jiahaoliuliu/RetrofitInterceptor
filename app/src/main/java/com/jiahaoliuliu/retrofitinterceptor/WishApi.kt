@@ -3,8 +3,8 @@ package com.jiahaoliuliu.retrofitinterceptor
 import io.reactivex.Single
 import retrofit2.http.GET
 
-interface JsonPlaceholderApi {
+interface WishApi {
 
-    @GET("posts")
-    fun getPosts(): Single<List<Post>>
+    @GET("wish")
+    fun getWishesList(): Single<List<Wish>>
 }

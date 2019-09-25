@@ -7,11 +7,11 @@ import timber.log.Timber
 
 class MainPresenter(private val view:MainContract.View): MainContract.Presenter {
 
-    private val jsonPlaceholderRepository = JsonPlaceholderRepository()
+    private val jsonPlaceholderRepository = WishRepository()
     private val compositeDisposable = CompositeDisposable()
 
     override fun makeAWish() {
-        val disposable = jsonPlaceholderRepository.getPosts()
+        val disposable = jsonPlaceholderRepository.getWishesList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(view::showWish) {throwable -> Timber.e(throwable)}

@@ -1,0 +1,19 @@
+{
+	"wish": [
+		{
+			"id": 1,
+			"title": "1 million dollars",
+			"description":"1 million dollars has been deposit into your account. Enjoy!"
+		},
+		{
+			"id": 2,
+			"title": "Big house",
+			"description":"A 7 bedroom house is now under your name. Enjoy!"
+		},
+		{
+			"id": 3,
+			"title": "CEO promotion",
+			"description":"Within 24 hours you will be promoted as the CEO of your company. Enjoy!"
+		}
+	]
+}

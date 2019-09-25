@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         presenter.makeAWish()
     }
 
-    override fun showWish(wishesList: List<Wish>) {
-        Toast.makeText(this, "Your wish is now completed. Wait for 48 hours to see it", Toast.LENGTH_LONG).show()
+    override fun showWish(wish: Wish) {
+        Toast.makeText(this, wish.description, Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroy() {

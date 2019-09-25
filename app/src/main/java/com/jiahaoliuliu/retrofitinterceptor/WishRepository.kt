@@ -11,7 +11,7 @@ class WishRepository {
         private const val BASE_URL = "https://my-json-server.typicode.com/jiahaoliuliu/RetrofitInterceptor/"
     }
 
-    var wishApi: WishApi
+    private var wishApi: WishApi
 
     init {
         val okHttpClient = OkHttpClient.Builder().build()
